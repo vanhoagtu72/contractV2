@@ -6,12 +6,18 @@ const { MBTEST_CONFIG } = require("./config/mbtest-config");
 const { MBTESTNET_CONFIG } = require("./config/mbtestnet-config");
 const { OKTEST_CONFIG } = require("./config/oktest-config");
 const { ARBTEST_CONFIG } = require("./config/arbtest-config");
+const { RINKEBY_CONFIG } = require("./config/rinkeby-config");
 
 exports.GetConfig = function (network, accounts) {
     var CONFIG = {}
     switch (network) {
         case "kovan":
             CONFIG = KOVAN_CONFIG
+            CONFIG.multiSigAddress = accounts[0]
+            CONFIG.defaultMaintainer = accounts[0]
+            break;
+        case "rinkeby":
+            CONFIG = RINKEBY_CONFIG
             CONFIG.multiSigAddress = accounts[0]
             CONFIG.defaultMaintainer = accounts[0]
             break;

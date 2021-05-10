@@ -59,7 +59,7 @@ module.exports = {
     LockedVault:      false,
     MULTIHOP:         false,
     CpProxy:          false,
-    DEPLOY_NFT:       false,
+    DEPLOY_NFT:       true,
     MYSTERYBOX_V1:    false
   },
 
